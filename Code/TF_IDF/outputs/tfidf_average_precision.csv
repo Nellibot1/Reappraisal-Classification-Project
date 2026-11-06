@@ -1,0 +1,17 @@
+model_id,model_name,label,average_precision
+prevalence_baseline,Prevalence baseline,GM,0.18681318681318682
+prevalence_baseline,Prevalence baseline,PR,0.5054945054945055
+prevalence_baseline,Prevalence baseline,A,0.02197802197802198
+prevalence_baseline,Prevalence baseline,EJ,0.25274725274725274
+prevalence_baseline,Prevalence baseline,N,0.1978021978021978
+prevalence_baseline,Prevalence baseline,UC,0.15384615384615385
+prevalence_baseline,Prevalence baseline,V,0.0989010989010989
+prevalence_baseline,Prevalence baseline,H,0.03296703296703297
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,GM,0.7620608173197363
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,PR,0.8598640040387685
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,A,0.41666666666666663
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,EJ,0.6101887153594051
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,N,0.5915251221999578
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,UC,0.30839317941371613
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,V,0.13792137086180176
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,H,0.4526315789473684

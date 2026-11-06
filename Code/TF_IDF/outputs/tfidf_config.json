@@ -1,0 +1,36 @@
+{
+  "random_state": 42,
+  "label_threshold": 0.6,
+  "labels": [
+    "GM",
+    "PR",
+    "A",
+    "EJ",
+    "N",
+    "UC",
+    "V",
+    "H"
+  ],
+  "text_input": "SITUATION + REAPPRAISAL",
+  "split": "multilabel-stratified 70/15/15 when iterative-stratification is installed",
+  "ridge": {
+    "alpha": 0.1,
+    "max_features": 50000,
+    "ngram_range": [
+      1,
+      3
+    ],
+    "min_df": 1,
+    "thresholds": {
+      "GM": 0.35000000000000003,
+      "PR": 0.3,
+      "A": 0.1,
+      "EJ": 0.4,
+      "N": 0.3,
+      "UC": 0.35000000000000003,
+      "V": 0.3,
+      "H": 0.25
+    },
+    "validation_macro_f1": 0.5159323217962546
+  }
+}

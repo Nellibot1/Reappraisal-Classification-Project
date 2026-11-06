@@ -1,0 +1,16 @@
+experiment_name,model_name,run_id,learning_rate,scheduler_type,num_epochs_planned,epoch,train_loss,val_loss
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,1,0.7570170872616317,0.6483575520308121
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,2,0.6192414783081919,0.502410334089528
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,3,0.49740437994588094,0.47766817004784295
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,4,0.4707804684931377,0.4709186191144197
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,5,0.45243728104627357,0.44255452570707904
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,6,0.42849854900027223,0.4179318041905113
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,7,0.4014066036017436,0.40314695368642395
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,8,0.38103698953142706,0.39695576610772504
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,9,0.3653120191873245,0.39536073285600415
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,10,0.350122425353752,0.39621549067289935
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,11,0.3400620508868739,0.3976386539314104
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,12,0.33024138380896373,0.3964263978211776
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,13,0.3238398805260658,0.39803840284762176
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,14,0.3152229278436247,0.3987694875053737
+bert_large_uncased_lr_1e_05_sched_cosine,google-bert/bert-large-uncased,random_seed13,1e-05,cosine,30,15,0.310798797404991,0.4053286728651627

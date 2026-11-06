@@ -1,0 +1,16 @@
+experiment_name,model_name,run_id,learning_rate,num_epochs_planned,epoch,train_loss,val_loss
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,1,0.5877430365895325,0.4766465400656064
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,2,0.5110325970739689,0.46832547585169476
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,3,0.4942691590426103,0.46207278470198315
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,4,0.48255000811702803,0.4574015885591507
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,5,0.47547671648691286,0.4639224335551262
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,6,0.4591383163659078,0.44052375108003616
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,7,0.4429891660528363,0.43628495931625366
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,8,0.4260708076773949,0.4351507102449735
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,9,0.4128826676674609,0.42815327644348145
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,10,0.39071692104609507,0.43697020411491394
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,11,0.3756355125949068,0.43855051199595135
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,12,0.36309244835151816,0.4387960657477379
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,13,0.34988185313512693,0.4512027899424235
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,14,0.3417090689236263,0.440051610271136
+modernbert_base_lr_1e_05,answerdotai/ModernBERT-base,random_seed42,1e-05,30,15,0.3354034749966747,0.45099260409673053

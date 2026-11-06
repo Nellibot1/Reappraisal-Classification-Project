@@ -1,0 +1,4 @@
+experiment_name,model_name,loss_mode,macro_mae_mean,macro_mae_sd,mean_pearson_mean,mean_pearson_sd,weak_presence_tuned_macro_f1_mean,weak_presence_tuned_macro_f1_sd,majority_tuned_macro_f1_mean,majority_tuned_macro_f1_sd,strong_presence_tuned_macro_f1_mean,strong_presence_tuned_macro_f1_sd,n_runs
+bert_base_uncased,bert-base-uncased,binomial_nll,0.17003358248621225,,0.4563674870878458,,0.6256211939091669,,0.4107082302618017,,0.39713781275221954,,1
+bert_large_uncased,google-bert/bert-large-uncased,binomial_nll,0.1553383469581604,,0.5394222475588322,,0.6493095813503813,,0.46012674008997534,,0.41175474254742545,,1
+modernbert_base,answerdotai/ModernBERT-base,binomial_nll,0.16367518063634634,,0.4424390643835068,,0.6765790653773898,,0.42337287013248576,,0.3161115370417696,,1

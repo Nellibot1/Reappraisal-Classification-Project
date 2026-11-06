@@ -1,0 +1,17 @@
+experiment_name,model_name,run_id,learning_rate,num_epochs_planned,epoch,train_loss,val_loss
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,1,0.776233102353114,0.6860098216844641
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,2,0.5986858918419424,0.4790393088174903
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,3,0.4883881970396582,0.4571221833643706
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,4,0.4629268800874926,0.43274256327877875
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,5,0.43353646234521326,0.42495947169220966
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,6,0.4083924158564154,0.4176130657610686
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,7,0.3841955616789044,0.4130223613718282
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,8,0.3647392040716027,0.41397641663965973
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,9,0.3516841189197774,0.4105486817981886
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,10,0.34089736331183956,0.4070954206197158
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,11,0.33365353843513523,0.4139394513938738
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,12,0.32561255541612516,0.41270022288612696
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,13,0.31982115487445073,0.41734454942786176
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,14,0.31459911125448514,0.41414634041164233
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,15,0.3111123198045875,0.4156875130922898
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed42,1e-05,30,16,0.3055498951448585,0.421461275090342

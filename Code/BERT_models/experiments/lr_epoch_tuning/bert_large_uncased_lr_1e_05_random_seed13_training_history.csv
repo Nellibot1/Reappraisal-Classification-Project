@@ -1,0 +1,15 @@
+experiment_name,model_name,run_id,learning_rate,num_epochs_planned,epoch,train_loss,val_loss
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,1,0.7577672426430684,0.6554436061693274
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,2,0.6168179680716317,0.4811452134795811
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,3,0.48310049215577683,0.4679694007272306
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,4,0.4540928101764535,0.437368199877117
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,5,0.4291997034594698,0.4210719725360041
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,6,0.4079155525508917,0.40691268573636596
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,7,0.3850331039361234,0.40040913224220276
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,8,0.3700681099633001,0.3977860756542372
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,9,0.35235837551782717,0.40136236470678577
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,10,0.3422311710299186,0.4039622078771177
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,11,0.3319482312731023,0.40176654509876086
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,12,0.32300603488143886,0.39975254302439484
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,13,0.31643502189303346,0.4021063796851946
+bert_large_uncased_lr_1e_05,google-bert/bert-large-uncased,random_seed13,1e-05,30,14,0.31187744410532825,0.40578115763871564

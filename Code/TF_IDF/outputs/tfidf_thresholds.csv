@@ -1,0 +1,17 @@
+model_id,model_name,label,threshold
+prevalence_baseline,Prevalence baseline,GM,0.5
+prevalence_baseline,Prevalence baseline,PR,0.5
+prevalence_baseline,Prevalence baseline,A,0.5
+prevalence_baseline,Prevalence baseline,EJ,0.5
+prevalence_baseline,Prevalence baseline,N,0.5
+prevalence_baseline,Prevalence baseline,UC,0.5
+prevalence_baseline,Prevalence baseline,V,0.5
+prevalence_baseline,Prevalence baseline,H,0.5
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,GM,0.35000000000000003
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,PR,0.3
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,A,0.1
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,EJ,0.4
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,N,0.3
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,UC,0.35000000000000003
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,V,0.3
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,H,0.25

@@ -1,0 +1,17 @@
+model_id,model_name,label,precision,recall,f1,support
+prevalence_baseline,Prevalence baseline,GM,0.0,0.0,0.0,17
+prevalence_baseline,Prevalence baseline,PR,0.5054945054945055,1.0,0.6715328467153284,46
+prevalence_baseline,Prevalence baseline,A,0.0,0.0,0.0,2
+prevalence_baseline,Prevalence baseline,EJ,0.0,0.0,0.0,23
+prevalence_baseline,Prevalence baseline,N,0.0,0.0,0.0,18
+prevalence_baseline,Prevalence baseline,UC,0.0,0.0,0.0,14
+prevalence_baseline,Prevalence baseline,V,0.0,0.0,0.0,9
+prevalence_baseline,Prevalence baseline,H,0.0,0.0,0.0,3
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,GM,0.5,0.7058823529411765,0.5853658536585366,17
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,PR,0.6363636363636364,0.9130434782608695,0.75,46
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,A,0.07407407407407407,1.0,0.13793103448275862,2
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,EJ,0.5625,0.391304347826087,0.46153846153846156,23
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,N,0.4444444444444444,0.6666666666666666,0.5333333333333333,18
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,UC,0.375,0.42857142857142855,0.39999999999999997,14
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,V,0.0,0.0,0.0,9
+tfidf_tuned_ridge,TF-IDF + tuned Ridge,H,0.3333333333333333,0.3333333333333333,0.3333333333333333,3

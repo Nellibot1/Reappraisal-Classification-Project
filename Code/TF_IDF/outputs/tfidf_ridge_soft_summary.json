@@ -1,0 +1,8 @@
+{
+  "model_id": "tfidf_tuned_ridge",
+  "model_name": "TF-IDF + tuned Ridge",
+  "macro_mae": 0.1625732480464458,
+  "macro_rmse": 0.21595897841904715,
+  "mean_pearson": 0.4916543074275953,
+  "mean_spearman": 0.4285774106475728
+}

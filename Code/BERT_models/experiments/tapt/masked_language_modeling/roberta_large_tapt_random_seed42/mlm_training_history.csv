@@ -1,0 +1,3 @@
+epoch,train_mlm_loss,validation_mlm_loss,validation_perplexity,learning_rate
+1,,,,1e-05
+2,,,,8.888888888888888e-06

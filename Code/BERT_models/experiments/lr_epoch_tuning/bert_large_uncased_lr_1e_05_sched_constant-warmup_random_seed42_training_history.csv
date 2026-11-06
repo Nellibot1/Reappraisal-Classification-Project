@@ -1,0 +1,16 @@
+experiment_name,model_name,run_id,learning_rate,scheduler_type,num_epochs_planned,epoch,train_loss,val_loss
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,1,0.7763214184428161,0.686346463535143
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,2,0.5979117922625452,0.47914437107417895
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,3,0.4881152083288948,0.45655593016873236
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,4,0.4619454530612478,0.4307329473288163
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,5,0.4309566375219597,0.42013864802277606
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,6,0.40867460083286716,0.4216072326121123
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,7,0.3824395405234031,0.4128556549549103
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,8,0.3672387545120041,0.4162761530150538
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,9,0.35351564369674,0.40786881161772687
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,10,0.3408132903980759,0.40825841089953546
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,11,0.3328767441353708,0.4181009310743083
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,12,0.3252479088193965,0.41873613777367963
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,13,0.319276825437006,0.418715660986693
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,14,0.31387776094225217,0.42165696491365845
+bert_large_uncased_lr_1e_05_sched_constant-warmup,google-bert/bert-large-uncased,random_seed42,1e-05,constant_with_warmup,30,15,0.3095556802625926,0.4221757585587709

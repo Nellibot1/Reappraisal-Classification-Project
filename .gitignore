@@ -1,0 +1,38 @@
+# Local environments and editor state
+.venv/
+.idea/
+.matplotlib_cache/
+.ipynb_checkpoints/
+**/.ipynb_checkpoints/
+**/__pycache__/
+*.py[cod]
+.DS_Store
+
+# Credentials and machine-local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Temporary files
+tmp/
+*.log
+Screenshot*.png
+
+# Large generated model artifacts (store outside GitHub)
+*.pt
+*.safetensors
+**/pytorch_model.bin
+
+# Row-level predictions reproduce raw situation and reappraisal text
+*_test_predictions.csv
+
+# Third-party papers may not be licensed for redistribution
+Papers/
+
+# Raw research data is private-by-default. Add only after data-sharing review.
+data/*
+!data/README.md
+!data/notes/
+!data/notes/**

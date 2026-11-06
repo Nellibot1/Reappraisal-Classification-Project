@@ -1,0 +1,25 @@
+{
+  "config": {
+    "model_name": "FacebookAI/roberta-large",
+    "seed": 13,
+    "max_length": 256,
+    "mlm_probability": 0.15,
+    "batch_size": 1,
+    "gradient_accumulation_steps": 8,
+    "learning_rate": 1e-05,
+    "weight_decay": 0.01,
+    "num_epochs": 10,
+    "patience": 2,
+    "validation_fraction": 0.1,
+    "include_situation": false,
+    "local_files_only": false,
+    "downstream_run_id": "random_seed13"
+  },
+  "downstream_run_id": "random_seed13",
+  "best_epoch": 2,
+  "best_validation_mlm_loss": 0.9865364739266427,
+  "downstream_train_items": 424,
+  "mlm_train_items": 382,
+  "mlm_validation_items": 42,
+  "adapted_encoder_directory": "Code/BERT_models/experiments/tapt/masked_language_modeling/roberta_large_tapt_random_seed13"
+}

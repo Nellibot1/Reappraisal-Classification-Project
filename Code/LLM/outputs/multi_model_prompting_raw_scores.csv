@@ -1,0 +1,98 @@
+model_key,model_name,model_id,actual_model,condition,description,n_examples_per_label,split,question_code,key,raw_response,prompt_tokens,completion_tokens,total_tokens,GM_llm_score,PR_llm_score,A_llm_score,EJ_llm_score,N_llm_score,UC_llm_score,V_llm_score,H_llm_score
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q13,1434,"{
+  ""GM"": 0.0,
+  ""PR"": 0.85,
+  ""A"": 0.0,
+  ""EJ"": 0.0,
+  ""N"": 0.0,
+  ""UC"": 0.4,
+  ""V"": 0.0,
+  ""H"": 0.0
+}",378,76,454,0.0,0.85,0.0,0.0,0.0,0.4,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q15,1441,"{""GM"": 0.0, ""PR"": 0.7, ""A"": 0.0, ""EJ"": 0.6, ""N"": 0.0, ""UC"": 0.5, ""V"": 0.0, ""H"": 0.0}",396,66,462,0.0,0.7,0.0,0.6,0.0,0.5,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q18,434,"{""GM"": 0.0, ""PR"": 0.4, ""A"": 0.0, ""EJ"": 0.3, ""N"": 0.6, ""UC"": 0.0, ""V"": 0.2, ""H"": 0.0}",370,66,436,0.0,0.4,0.0,0.3,0.6,0.0,0.2,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q28,263,"{
+  ""GM"": 0.2,
+  ""PR"": 0.85,
+  ""A"": 0.3,
+  ""EJ"": 0.7,
+  ""N"": 0.1,
+  ""UC"": 0.4,
+  ""V"": 0.2,
+  ""H"": 0.0
+}",370,76,446,0.2,0.85,0.3,0.7,0.1,0.4,0.2,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q29,505,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.3, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",372,66,438,0.0,0.8,0.0,0.3,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q33,127,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.2, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.4}",366,66,432,0.0,0.8,0.0,0.2,0.0,0.0,0.0,0.4
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q45,801,"{""GM"": 0.0, ""PR"": 0.9, ""A"": 0.0, ""EJ"": 0.6, ""N"": 0.0, ""UC"": 0.8, ""V"": 0.0, ""H"": 0.0}",381,66,447,0.0,0.9,0.0,0.6,0.0,0.8,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q49,1268,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",354,66,420,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q51,222,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.2, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.2, ""H"": 0.0}",342,66,408,0.0,0.8,0.0,0.2,0.0,0.0,0.2,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q62,1410,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",372,66,438,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q22,1449,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.7, ""N"": 0.0, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",397,66,463,0.0,0.8,0.0,0.7,0.0,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q27,1185,"{
+""GM"": 0.0,
+""PR"": 0.9,
+""A"": 0.0,
+""EJ"": 0.2,
+""N"": 0.0,
+""UC"": 0.3,
+""V"": 0.0,
+""H"": 0.0
+}",389,64,453,0.0,0.9,0.0,0.2,0.0,0.3,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q36,1458,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",368,66,434,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q43,682,"{""GM"": 0.3, ""PR"": 0.7, ""A"": 0.1, ""EJ"": 0.6, ""N"": 0.2, ""UC"": 0.4, ""V"": 0.5, ""H"": 0.3}",369,66,435,0.3,0.7,0.1,0.6,0.2,0.4,0.5,0.3
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q44,150,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.2, ""N"": 0.0, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",368,66,434,0.0,0.8,0.0,0.2,0.0,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q54,343,"{""GM"": 0.0, ""PR"": 0.85, ""A"": 0.0, ""EJ"": 0.3, ""N"": 0.0, ""UC"": 0.2, ""V"": 0.3, ""H"": 0.0}",356,66,422,0.0,0.85,0.0,0.3,0.0,0.2,0.3,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q58,686,"{""GM"": 0.0, ""PR"": 0.6, ""A"": 0.7, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",351,66,417,0.0,0.6,0.7,0.0,0.0,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q60,1275,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",383,66,449,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q68,516,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",369,66,435,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,zero_shot_codebook_only,Zero-shot: codebook only,0,test,Q75,1489,"{""GM"": 0.4, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.3, ""N"": 0.5, ""UC"": 0.7, ""V"": 0.2, ""H"": 0.0}",380,66,446,0.4,0.8,0.0,0.3,0.5,0.7,0.2,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q13,1434,"{
+  ""GM"": 0.0,
+  ""PR"": 0.8,
+  ""A"": 0.0,
+  ""EJ"": 0.0,
+  ""N"": 0.2,
+  ""UC"": 0.6,
+  ""V"": 0.0,
+  ""H"": 0.0
+}",1483,76,1559,0.0,0.8,0.0,0.0,0.2,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q15,1441,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.8, ""N"": 0.0, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",1501,66,1567,0.0,0.8,0.0,0.8,0.0,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q18,434,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 1.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",1475,66,1541,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q28,263,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.6, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",1475,66,1541,0.0,0.8,0.0,0.6,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q29,505,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",1477,66,1543,0.0,1.0,0.0,0.4,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q33,127,"{""GM"": 0.2, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.2, ""UC"": 0.2, ""V"": 0.0, ""H"": 0.6}",1471,66,1537,0.2,0.8,0.0,0.4,0.2,0.2,0.0,0.6
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q45,801,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.6, ""N"": 0.0, ""UC"": 0.8, ""V"": 0.0, ""H"": 0.0}",1486,66,1552,0.0,1.0,0.0,0.6,0.0,0.8,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q49,1268,"{""GM"": 0.0, ""PR"": 0.2, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.4, ""UC"": 0.0, ""V"": 0.2, ""H"": 0.0}",1459,66,1525,0.0,0.2,0.0,0.0,0.4,0.0,0.2,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q51,222,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.2, ""H"": 0.0}",1447,66,1513,0.0,0.8,0.0,0.4,0.0,0.0,0.2,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,validation,Q62,1410,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 1.0, ""V"": 0.0, ""H"": 0.0}",1477,66,1543,0.0,0.0,0.0,0.4,0.0,1.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q22,1449,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.8, ""N"": 0.0, ""UC"": 0.4, ""V"": 0.0, ""H"": 0.0}",1502,66,1568,0.0,0.8,0.0,0.8,0.0,0.4,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q27,1185,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 0.2, ""V"": 0.0, ""H"": 0.0}",1494,66,1560,0.0,1.0,0.0,0.4,0.0,0.2,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q36,1458,"{""GM"": 0.0, ""PR"": 0.4, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.6, ""UC"": 0.4, ""V"": 0.0, ""H"": 0.0}",1473,66,1539,0.0,0.4,0.0,0.0,0.6,0.4,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q43,682,"{""GM"": 0.0, ""PR"": 0.6, ""A"": 0.0, ""EJ"": 0.6, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.2, ""H"": 0.2}",1474,66,1540,0.0,0.6,0.0,0.6,0.0,0.0,0.2,0.2
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q44,150,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",1473,66,1539,0.0,1.0,0.0,0.4,0.0,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q54,343,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",1461,66,1527,0.0,1.0,0.0,0.4,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q58,686,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.8, ""EJ"": 0.6, ""N"": 0.2, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",1456,66,1522,0.0,0.0,0.8,0.6,0.2,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q60,1275,"{""GM"": 0.0, ""PR"": 0.6, ""A"": 0.0, ""EJ"": 0.6, ""N"": 0.0, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",1488,66,1554,0.0,0.6,0.0,0.6,0.0,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q68,516,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.8, ""EJ"": 0.6, ""N"": 0.6, ""UC"": 0.4, ""V"": 0.0, ""H"": 0.0}",1474,66,1540,0.0,0.0,0.8,0.6,0.6,0.4,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_1_per_strategy,Few-shot: one example per strategy,1,test,Q75,1489,"{""GM"": 0.2, ""PR"": 0.6, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.4, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",1485,66,1551,0.2,0.6,0.0,0.4,0.4,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q13,1434,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.4, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",3807,66,3873,0.0,0.8,0.0,0.0,0.4,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q15,1441,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.2, ""UC"": 0.8, ""V"": 0.0, ""H"": 0.0}",3825,66,3891,0.0,0.8,0.0,0.4,0.2,0.8,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q18,434,"{""GM"": 0.0, ""PR"": 0.2, ""A"": 0.0, ""EJ"": 0.2, ""N"": 0.8, ""UC"": 0.0, ""V"": 0.2, ""H"": 0.0}",3799,66,3865,0.0,0.2,0.0,0.2,0.8,0.0,0.2,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q28,263,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.6, ""N"": 0.0, ""UC"": 0.2, ""V"": 0.2, ""H"": 0.0}",3799,66,3865,0.0,0.8,0.0,0.6,0.0,0.2,0.2,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q29,505,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 0.2, ""V"": 0.0, ""H"": 0.2}",3801,66,3867,0.0,0.8,0.0,0.4,0.0,0.2,0.0,0.2
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q33,127,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.2, ""N"": 0.0, ""UC"": 0.2, ""V"": 0.0, ""H"": 0.8}",3795,66,3861,0.0,0.8,0.0,0.2,0.0,0.2,0.0,0.8
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q45,801,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 0.8, ""V"": 0.0, ""H"": 0.0}",3810,66,3876,0.0,1.0,0.0,0.4,0.0,0.8,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q49,1268,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",3783,66,3849,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q51,222,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 0.2, ""V"": 0.2, ""H"": 0.2}",3771,66,3837,0.0,0.8,0.0,0.4,0.0,0.2,0.2,0.2
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,validation,Q62,1410,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.4, ""N"": 0.0, ""UC"": 1.0, ""V"": 0.0, ""H"": 0.0}",3801,66,3867,0.0,0.0,0.0,0.4,0.0,1.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q22,1449,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.6, ""N"": 0.0, ""UC"": 0.6, ""V"": 0.0, ""H"": 0.0}",3826,66,3892,0.0,0.8,0.0,0.6,0.0,0.6,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q27,1185,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.2, ""UC"": 0.4, ""V"": 0.0, ""H"": 0.0}",3818,66,3884,0.0,1.0,0.0,0.0,0.2,0.4,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q36,1458,"{""GM"": 0.0, ""PR"": 0.6, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.4, ""UC"": 0.4, ""V"": 0.0, ""H"": 0.0}",3797,66,3863,0.0,0.6,0.0,0.0,0.4,0.4,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q43,682,"{""GM"": 0.2, ""PR"": 0.6, ""A"": 0.0, ""EJ"": 0.8, ""N"": 0.0, ""UC"": 0.2, ""V"": 0.4, ""H"": 0.0}",3798,66,3864,0.2,0.6,0.0,0.8,0.0,0.2,0.4,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q44,150,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.8, ""V"": 0.0, ""H"": 0.0}",3797,66,3863,0.0,1.0,0.0,0.0,0.0,0.8,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q54,343,"{""GM"": 0.0, ""PR"": 1.0, ""A"": 0.0, ""EJ"": 0.2, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0}",3785,66,3851,0.0,1.0,0.0,0.2,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q58,686,"{ ""GM"": 0.0, ""PR"": 0.0, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.0, ""UC"": 0.0, ""V"": 0.0, ""H"": 0.0 }",3780,67,3847,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q60,1275,"{""GM"": 0.0, ""PR"": 0.6, ""A"": 0.0, ""EJ"": 0.2, ""N"": 0.0, ""UC"": 0.8, ""V"": 0.0, ""H"": 0.0}",3812,66,3878,0.0,0.6,0.0,0.2,0.0,0.8,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q68,516,"{""GM"": 0.0, ""PR"": 0.0, ""A"": 0.8, ""EJ"": 0.4, ""N"": 0.8, ""UC"": 0.8, ""V"": 0.0, ""H"": 0.0}",3798,66,3864,0.0,0.0,0.8,0.4,0.8,0.8,0.0,0.0
+glm_5_2,GLM 5.2,z-ai/glm-5.2,z-ai/glm-5.2,few_shot_3_per_strategy,Few-shot: three examples per strategy,3,test,Q75,1489,"{""GM"": 0.0, ""PR"": 0.8, ""A"": 0.0, ""EJ"": 0.2, ""N"": 0.4, ""UC"": 0.6, ""V"": 0.2, ""H"": 0.0}",3809,66,3875,0.0,0.8,0.0,0.2,0.4,0.6,0.2,0.0
+deepseek_v4_pro,DeepSeek V4 Pro,deepseek/deepseek-v4-pro,deepseek/deepseek-v4-pro,zero_shot_codebook_only,Zero-shot: codebook only,0,validation,Q13,1434,"{""GM"": 0.0, ""PR"": 0.9, ""A"": 0.0, ""EJ"": 0.0, ""N"": 0.7, ""UC"": 0.9, ""V"": 0.0, ""H"": 0.0}",389,776,1165,0.0,0.9,0.0,0.0,0.7,0.9,0.0,0.0

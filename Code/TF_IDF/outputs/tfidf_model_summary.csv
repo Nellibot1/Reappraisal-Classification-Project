@@ -1,0 +1,3 @@
+family,model_id,model_name,comparison_target,micro_f1,macro_f1,samples_f1,hamming_loss,macro_mae,mean_pearson,mean_spearman
+Prevalence,prevalence_baseline,Prevalence baseline,vote_fraction >= 0.6,0.4125560538116592,0.08394160583941605,0.4139194139194139,0.17994505494505494,,,
+TF-IDF,tfidf_tuned_ridge,TF-IDF + tuned Ridge,vote_fraction >= 0.6 / validation-tuned,0.5384615384615385,0.4001877520433029,0.5462585034013605,0.1978021978021978,0.1625732480464458,0.4916543074275953,0.4285774106475728

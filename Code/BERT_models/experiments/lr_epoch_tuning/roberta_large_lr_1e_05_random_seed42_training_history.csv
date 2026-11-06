@@ -1,0 +1,15 @@
+experiment_name,model_name,run_id,learning_rate,scheduler_type,num_epochs_planned,epoch,train_loss,val_loss
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,1,0.5805019325805161,0.47426841051682184
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,2,0.4898504167795181,0.4654029387494792
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,3,0.47221633398307944,0.4366758089998494
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,4,0.4268100542842217,0.40490151488262677
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,5,0.39690021608235704,0.4115407428015833
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,6,0.3723122963927827,0.4051491035067517
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,7,0.3524687082137702,0.4003332956977513
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,8,0.3376512199921428,0.39623752884242847
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,9,0.3267476883418155,0.40453612286111584
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,10,0.3181957613747075,0.40830195079679077
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,11,0.3128676607080226,0.40850637010906055
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,12,0.30678988726071593,0.4086245596408844
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,13,0.30265739391434865,0.40513425028842426
+roberta_large_lr_1e_05,FacebookAI/roberta-large,random_seed42,1e-05,linear,30,14,0.2992375949924847,0.4172670297000719
