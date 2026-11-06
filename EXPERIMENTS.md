@@ -15,20 +15,4 @@ Dates below describe the original experiment files, not the date they were conso
 | 2026-10-26–27 | RoBERTa task-adaptive pretraining (TAPT) | `Code/BERT_models/notebooks/training/RoBERTa_Masked_Language_Modelling_TAPT.ipynb` | `Code/BERT_models/experiments/tapt/masked_language_modeling/` | Trained artifacts and manifests present |
 | 2026-10-26–27 | RoBERTa TAPT classification comparison | `Code/BERT_models/notebooks/training/RoBERTa_TAPT_Comparison_Seed13.ipynb`; `Code/BERT_models/notebooks/analysis/RoBERTa_TAPT_Results_Comparison_Seed13.ipynb` | `Code/BERT_models/experiments/tapt/downstream_comparison/` | Latest experiment series; checkpoints, predictions, metrics, and comparison tables present |
 
-## Recovered legacy material
 
-The following unique items were copied into this workspace without altering their originals:
-
-- LLM comparison notebook and partial outputs from `~/Documents/Reappraisal`
-- High-ROI multitask notebook from `~/Documents/Reappraisal`
-- Extracted research-paper text from `~/Documents/Reappraisal/tmp/pdfs`
-- Reference-library export from `~/Downloads/Reappraisal`
-
-The imported notebook paths were changed from machine-specific absolute paths to project-relative discovery. No existing BERT, TF-IDF, comparison, data, or result files were moved.
-
-## Suggested next steps
-
-1. Treat `Code/BERT_models/experiments/tapt/downstream_comparison/` as the latest completed experiment series.
-2. Review the cached LLM scores before resuming API calls; the notebook deliberately keeps `RUN_API = False`.
-3. Add the missing auxiliary emotion and intensity labels before enabling multitask training; the notebook deliberately keeps `RUN_TRAINING = False`.
-4. Keep model checkpoints and large generated artifacts out of version control if this folder is later turned into a Git repository.
