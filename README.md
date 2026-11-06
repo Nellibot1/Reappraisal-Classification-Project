@@ -80,24 +80,7 @@ In general, `notebooks/` contains executable research code and `experiments/` or
 | Multitask prototype | Shared encoder with additional prediction heads | `Code/multitask/high_roi_multitask_heads_evaluation.ipynb` |
 | Annotation analysis | Agreement and reliability of strategy annotations | `Data_exploration/IRR-reapp-annotations.ipynb` |
 
-## Setup
 
-Clone the repository and start Jupyter from its root:
-
-```bash
-git clone https://github.com/Nellibot1/Reappraisal-Classification-Project.git
-cd Reappraisal-Classification-Project
-
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install --upgrade pip
-python -m pip install jupyterlab pandas numpy scipy scikit-learn \
-  iterative-stratification matplotlib torch transformers tqdm openai irrCAC
-
-jupyter lab
-```
-
-There is not yet a locked environment file, so the installation command above is a practical starting point rather than an exact archival environment. The analysis and TF-IDF notebooks are suitable for a CPU. Training the larger transformer models is substantially faster on a CUDA or Apple-silicon accelerator and may require reducing the configured batch size to fit available memory.
 
 ## Data required for rerunning experiments
 
@@ -126,37 +109,4 @@ Trained PyTorch and Hugging Face weight files are excluded from Git. The reposit
 
 Historical metric files can refer to a checkpoint path even when that checkpoint is not present in the public clone. This does not affect reading the recorded metrics, but loading the trained model requires obtaining the corresponding artifact separately.
 
-## Safe execution
 
-Computationally expensive or externally billed operations are disabled by default:
-
-- Transformer training notebooks require an explicit `RUN_* = True` setting.
-- Completed runs are skipped by default, and TAPT checkpoints have an additional overwrite guard.
-- TAPT starts in smoke-test mode unless full training is explicitly selected.
-- LLM API calls are disabled by default and read credentials from `OPENROUTER_API_KEY` rather than storing a key in the notebook.
-- Multitask training is disabled until the additional target data is supplied.
-
-Review the configuration cell near the beginning of a notebook before using **Run All**. Prefer a new run identifier when changing a model or configuration; do not overwrite an existing experiment directory unless that is deliberate.
-
-## Adding an experiment
-
-To keep the project navigable:
-
-1. Put executable notebooks in the relevant `notebooks/training/` or method directory.
-2. Write outputs to a descriptive subdirectory under `experiments/` or `outputs/`.
-3. Include the model name, split, and random seed in the run identifier.
-4. Commit aggregate metrics, configuration, manifests, and small figures—not raw text predictions or model weights.
-5. Add the run to [EXPERIMENTS.md](EXPERIMENTS.md) and update the relevant method README when its entry points or layout change.
-
-## Publication and privacy policy
-
-The repository is a public-safe research snapshot. It excludes:
-
-- free-text participant responses and annotator metadata;
-- row-level test predictions that repeat the original text;
-- saved notebook outputs that may display private examples;
-- trained model weights and other large generated files;
-- third-party paper PDFs whose redistribution rights are not established;
-- API keys, local environments, caches, and machine-specific paths.
-
-Do not force-add excluded data or artifacts without first reviewing participant consent, ethics requirements, licensing, and the intended release location.
