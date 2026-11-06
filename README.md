@@ -1,6 +1,5 @@
 # Reappraisal Classification
 
-This folder is the canonical workspace for the reappraisal-classification experiments. It now contains the newer transformer experiments together with the unique LLM and multitask notebooks recovered from the older `Documents/Reappraisal` workspace.
 
 ## Project layout
 
@@ -38,6 +37,4 @@ The imported notebooks locate this project automatically when Jupyter is started
 
 The LLM notebook has external API calls disabled by default. The multitask notebook has model training disabled by default. Review their configuration cells before enabling either operation.
 
-## Consolidation note
 
-The source folders in `~/Documents/Reappraisal` and `~/Downloads/Reappraisal` were not deleted or modified. They can remain as temporary backups until this consolidated workspace has been fully verified.
