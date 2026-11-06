@@ -24,16 +24,7 @@ The main supervised experiments use **soft labels**: the proportion of valid ann
 - **Majority:** more than half of valid annotators selected it.
 - **Strong presence:** at least 80% of valid annotators selected it.
 
-## Where to start
 
-If you are new to the project, use this route:
-
-1. Read [EXPERIMENTS.md](EXPERIMENTS.md) for a chronological inventory and the status of every experiment family.
-2. Open [Model_comparison.ipynb](Code/comparison/Model_comparison.ipynb) for the cross-family comparison.
-3. Open [Important_Results_Summary.ipynb](Code/BERT_models/notebooks/analysis/Important_Results_Summary.ipynb) for the main transformer result tables.
-4. Read [Code/BERT_models/README.md](Code/BERT_models/README.md) before rerunning or extending a transformer experiment.
-
-The latest experiment series is the RoBERTa task-adaptive pretraining comparison under `Code/BERT_models/experiments/tapt/`. TAPT uses masked-language modeling as its adaptation stage, which is why its encoder artifacts are nested under `tapt/masked_language_modeling/`.
 
 ## Repository map
 
