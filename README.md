@@ -92,12 +92,6 @@ data/
 
 `annotate-lime.csv` supplies the text examples. Each semicolon-separated annotation matrix supplies the individual judgments used to construct vote counts and soft targets for one strategy. See [data/README.md](data/README.md) before adding or sharing any data.
 
-Without the private data, a new reader can still inspect the notebooks and reproduce many of the published tables and visualizations from the committed aggregate result files. Full training or row-level evaluation requires authorized access to the dataset.
 
-## Model artifacts
-
-Trained PyTorch and Hugging Face weight files are excluded from Git. The repository retains compact configurations, tokenizer metadata, training histories, aggregate metrics, and figures where appropriate. See [MODEL_ARTIFACTS.md](MODEL_ARTIFACTS.md) for the excluded artifact inventory and recommended storage approach.
-
-Historical metric files can refer to a checkpoint path even when that checkpoint is not present in the public clone. This does not affect reading the recorded metrics, but loading the trained model requires obtaining the corresponding artifact separately.
 
 
