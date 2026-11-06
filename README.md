@@ -2,8 +2,7 @@
 
 This repository studies **multilabel classification of cognitive reappraisal strategies** in short text. Given a situation and a written reappraisal, the models estimate how strongly annotators would associate the response with each of eight strategies.
 
-The repository contains the experiment notebooks and compact result artifacts for classical machine-learning, transformer, task-adaptive pretraining, large-language-model, and multitask approaches. Raw participant data and trained model weights are not part of the public repository.
-
+The repository contains the experiment notebooks and compact result artifacts for classical machine-learning, transformer, task-adaptive pretraining, large-language-model, and multitask approaches. 
 ## Classification task
 
 Each reappraisal can express zero, one, or several strategies:
