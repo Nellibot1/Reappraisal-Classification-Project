@@ -72,7 +72,7 @@ In general, `notebooks/` contains executable research code and `experiments/` or
 
 ## Results at a glance
 
-The table below uses the best recorded configuration for each model architecture in the committed summaries. Macro MAE and mean Pearson evaluate the predicted soft labels. Lower MAE and higher Pearson are better. Binary macro F1 is shown with its target definition because the TF-IDF and transformer experiments do not use exactly the same binary cutoff.
+The table below uses the best recorded configuration for each model architecture in the committed summaries.
 
 | Approach | Selected configuration | Seeds | Macro MAE ↓ | Mean Pearson ↑ | Binary macro F1 ↑ | Binary target |
 |---|---|---:|---:|---:|---:|---|
@@ -84,20 +84,15 @@ The table below uses the best recorded configuration for each model architecture
 | RoBERTa Large | Linear schedule, LR `1e-5` | 42 | **0.128** | **0.700** | **0.570** | Majority |
 | RoBERTa Large + TAPT | Linear schedule, LR `1e-5` | 13 | 0.134 | 0.589 | 0.454 | Majority |
 
-The tuned RoBERTa Large run has the strongest recorded result on all three headline metrics. It is a single-seed result, so it should be confirmed with additional seeds. Among configurations evaluated with two seeds, BERT Large has the lowest soft-label error, while its majority macro F1 is close to the selected BERT Base result. TF-IDF is a useful lightweight baseline, but its binary F1 is not directly interchangeable with the majority F1 because it uses a stricter target definition.
+Values above are rounded to three decimals; `±` values are standard deviations across the two listed seeds.
 
-The source tables are the [TF-IDF model summary](Code/TF_IDF/outputs/tfidf_model_summary.csv), [ranked transformer configuration summary](Code/BERT_models/experiments/lr_epoch_tuning/important_key_results_by_config.csv), and [TAPT downstream comparison](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed13_by_lr.csv). Values above are rounded to three decimals; `±` values are standard deviations across the two listed seeds.
-
-### Does TAPT improve RoBERTa?
-
-The controlled seed-13 comparison gives a mixed result:
 
 | Variant | Macro MAE ↓ | Mean Pearson ↑ | Weak-presence macro F1 ↑ | Majority macro F1 ↑ | Strong-presence macro F1 ↑ |
 |---|---:|---:|---:|---:|---:|
 | Standard RoBERTa Large | **0.133** | **0.603** | **0.712** | 0.453 | **0.380** |
 | RoBERTa Large + TAPT | 0.134 | 0.589 | 0.696 | **0.454** | 0.328 |
 
-TAPT lowers validation loss and raises majority macro F1 by about 0.002, but it slightly worsens soft-label MAE and Pearson correlation and reduces the weak- and strong-presence F1 scores. On this one-seed comparison, TAPT does not provide a consistent overall improvement. The detailed metrics are in the [TAPT comparison table](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed13_by_lr.csv).
+
 
 ### Approaches without a completed aggregate comparison
 
