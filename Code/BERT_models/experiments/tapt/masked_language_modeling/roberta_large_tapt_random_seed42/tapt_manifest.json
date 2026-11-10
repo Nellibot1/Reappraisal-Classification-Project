@@ -12,12 +12,14 @@
     "patience": 2,
     "validation_fraction": 0.1,
     "include_situation": false,
-    "local_files_only": false
+    "local_files_only": false,
+    "downstream_run_id": "random_seed42"
   },
-  "best_epoch": null,
-  "best_validation_mlm_loss": Infinity,
+  "downstream_run_id": "random_seed42",
+  "best_epoch": 6,
+  "best_validation_mlm_loss": 1.1578980319385057,
   "downstream_train_items": 424,
   "mlm_train_items": 382,
   "mlm_validation_items": 42,
-  "adapted_encoder_directory": "Code/BERT_models/experiments/tapt/masked_language_modeling/roberta_large_tapt_random_seed42"
+  "adapted_encoder_directory": "/data/nfs/projects/reappraisal_class/Code/BERT_models/experiments/tapt/masked_language_modeling/roberta_large_tapt_random_seed42"
 }

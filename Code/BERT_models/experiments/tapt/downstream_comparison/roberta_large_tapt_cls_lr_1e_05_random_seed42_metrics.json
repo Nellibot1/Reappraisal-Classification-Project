@@ -1,0 +1,869 @@
+{
+  "experiment_name": "roberta_large_tapt_cls_lr_1e_05",
+  "model_name": "/data/nfs/projects/reappraisal_class/Code/BERT_models/experiments/tapt/masked_language_modeling/roberta_large_tapt_random_seed42",
+  "run_id": "random_seed42",
+  "loss_mode": "binomial_nll",
+  "binary_target_schemes": {
+    "weak_presence": "at least one annotator marked the strategy present",
+    "majority": "more than half of valid annotators marked the strategy present",
+    "strong_presence": "at least 80% of valid annotators marked the strategy present"
+  },
+  "best_epoch": 7,
+  "best_val_loss": 0.40024392630742944,
+  "checkpoint_path": "/data/nfs/projects/reappraisal_class/Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_cls_lr_1e_05_random_seed42_best_model.pt",
+  "config": {
+    "experiment_name": "roberta_large_tapt_cls_lr_1e_05",
+    "model_name": "/data/nfs/projects/reappraisal_class/Code/BERT_models/experiments/tapt/masked_language_modeling/roberta_large_tapt_random_seed42",
+    "batch_size": 4,
+    "learning_rate": 1e-05,
+    "weight_decay": 0.01,
+    "dropout": 0.5,
+    "max_length": 256,
+    "num_epochs": 30,
+    "patience": 6,
+    "scheduler_type": "linear",
+    "local_files_only": true,
+    "pooling": "first_token"
+  },
+  "soft_summary": {
+    "macro_mae": 0.12953824130818248,
+    "macro_rmse": 0.18394839392951295,
+    "mean_pearson": 0.6499671712517738,
+    "mean_spearman": 0.5547728537971908
+  },
+  "binary_scheme_metrics": {
+    "weak_presence": {
+      "description": "at least one annotator marked the strategy present",
+      "fixed_0_5_binary_metrics": {
+        "micro_f1": 0.41575492341356673,
+        "macro_f1": 0.30515585619773167,
+        "samples_f1": 0.4201203558346415,
+        "hamming_loss": 0.36675824175824173
+      },
+      "tuned_binary_metrics": {
+        "micro_f1": 0.7556675062972292,
+        "macro_f1": 0.7085175033210249,
+        "samples_f1": 0.7460681565077169,
+        "hamming_loss": 0.2664835164835165
+      },
+      "thresholds": {
+        "GM": 0.05,
+        "PR": 0.1,
+        "A": 0.1,
+        "EJ": 0.1,
+        "N": 0.1,
+        "UC": 0.05,
+        "V": 0.05,
+        "H": 0.05
+      },
+      "test_average_precision_fixed_0_5": [
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "GM",
+          "average_precision": 0.8635861498021918
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "PR",
+          "average_precision": 0.9616986368478704
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "A",
+          "average_precision": 0.4792836406305995
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "EJ",
+          "average_precision": 0.8354177916876608
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "N",
+          "average_precision": 0.8161343949570854
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "UC",
+          "average_precision": 0.879286228082334
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "V",
+          "average_precision": 0.7308815819181084
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "H",
+          "average_precision": 0.6405413107197099
+        }
+      ],
+      "test_average_precision_tuned": [
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "GM",
+          "average_precision": 0.8635861498021918
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "PR",
+          "average_precision": 0.9616986368478704
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "A",
+          "average_precision": 0.4792836406305995
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "EJ",
+          "average_precision": 0.8354177916876608
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "N",
+          "average_precision": 0.8161343949570854
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "UC",
+          "average_precision": 0.879286228082334
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "V",
+          "average_precision": 0.7308815819181084
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "H",
+          "average_precision": 0.6405413107197099
+        }
+      ],
+      "test_prediction_counts_fixed_0_5": [
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "GM",
+          "true_positive_items": 43,
+          "predicted_positive_items": 17
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "PR",
+          "true_positive_items": 76,
+          "predicted_positive_items": 40
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "A",
+          "true_positive_items": 23,
+          "predicted_positive_items": 0
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "EJ",
+          "true_positive_items": 53,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "N",
+          "true_positive_items": 43,
+          "predicted_positive_items": 20
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "UC",
+          "true_positive_items": 61,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "V",
+          "true_positive_items": 42,
+          "predicted_positive_items": 1
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "H",
+          "true_positive_items": 16,
+          "predicted_positive_items": 0
+        }
+      ],
+      "test_prediction_counts_tuned": [
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "GM",
+          "true_positive_items": 43,
+          "predicted_positive_items": 53
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "PR",
+          "true_positive_items": 76,
+          "predicted_positive_items": 87
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "A",
+          "true_positive_items": 23,
+          "predicted_positive_items": 20
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "EJ",
+          "true_positive_items": 53,
+          "predicted_positive_items": 61
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "N",
+          "true_positive_items": 43,
+          "predicted_positive_items": 60
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "UC",
+          "true_positive_items": 61,
+          "predicted_positive_items": 85
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "V",
+          "true_positive_items": 42,
+          "predicted_positive_items": 56
+        },
+        {
+          "scheme": "weak_presence",
+          "threshold_type": "validation_tuned",
+          "label": "H",
+          "true_positive_items": 16,
+          "predicted_positive_items": 15
+        }
+      ],
+      "fixed_classification_report": "              precision    recall  f1-score   support\n\n          GM       0.94      0.37      0.53        43\n          PR       0.97      0.51      0.67        76\n           A       0.00      0.00      0.00        23\n          EJ       1.00      0.21      0.34        53\n           N       0.85      0.40      0.54        43\n          UC       1.00      0.18      0.31        61\n           V       1.00      0.02      0.05        42\n           H       0.00      0.00      0.00        16\n\n   micro avg       0.95      0.27      0.42       357\n   macro avg       0.72      0.21      0.31       357\nweighted avg       0.86      0.27      0.38       357\n samples avg       0.87      0.29      0.42       357\n",
+      "tuned_classification_report": "              precision    recall  f1-score   support\n\n          GM       0.68      0.84      0.75        43\n          PR       0.85      0.97      0.91        76\n           A       0.40      0.35      0.37        23\n          EJ       0.70      0.81      0.75        53\n           N       0.60      0.84      0.70        43\n          UC       0.71      0.98      0.82        61\n           V       0.57      0.76      0.65        42\n           H       0.73      0.69      0.71        16\n\n   micro avg       0.69      0.84      0.76       357\n   macro avg       0.66      0.78      0.71       357\nweighted avg       0.69      0.84      0.75       357\n samples avg       0.69      0.85      0.75       357\n"
+    },
+    "majority": {
+      "description": "more than half of valid annotators marked the strategy present",
+      "fixed_0_5_binary_metrics": {
+        "micro_f1": 0.6896551724137931,
+        "macro_f1": 0.4280070559435525,
+        "samples_f1": 0.6479853479853479,
+        "hamming_loss": 0.0989010989010989
+      },
+      "tuned_binary_metrics": {
+        "micro_f1": 0.6798679867986799,
+        "macro_f1": 0.5615389200762518,
+        "samples_f1": 0.6732600732600732,
+        "hamming_loss": 0.13324175824175824
+      },
+      "thresholds": {
+        "GM": 0.2,
+        "PR": 0.3,
+        "A": 0.15000000000000002,
+        "EJ": 0.2,
+        "N": 0.6000000000000001,
+        "UC": 0.45,
+        "V": 0.2,
+        "H": 0.2
+      },
+      "test_average_precision_fixed_0_5": [
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "GM",
+          "average_precision": 0.8503751184094706
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "PR",
+          "average_precision": 0.9677724559481015
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "A",
+          "average_precision": 0.75
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "EJ",
+          "average_precision": 0.7141011987252277
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "N",
+          "average_precision": 0.8535720974986512
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "UC",
+          "average_precision": 0.5221900968194845
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "V",
+          "average_precision": 0.3241589773054304
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "H",
+          "average_precision": 0.3213675213675214
+        }
+      ],
+      "test_average_precision_tuned": [
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "GM",
+          "average_precision": 0.8503751184094706
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "PR",
+          "average_precision": 0.9677724559481015
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "A",
+          "average_precision": 0.75
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "EJ",
+          "average_precision": 0.7141011987252277
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "N",
+          "average_precision": 0.8535720974986512
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "UC",
+          "average_precision": 0.5221900968194845
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "V",
+          "average_precision": 0.3241589773054304
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "H",
+          "average_precision": 0.3213675213675214
+        }
+      ],
+      "test_prediction_counts_fixed_0_5": [
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "GM",
+          "true_positive_items": 17,
+          "predicted_positive_items": 17
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "PR",
+          "true_positive_items": 46,
+          "predicted_positive_items": 40
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "A",
+          "true_positive_items": 2,
+          "predicted_positive_items": 0
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "EJ",
+          "true_positive_items": 23,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "N",
+          "true_positive_items": 18,
+          "predicted_positive_items": 20
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "UC",
+          "true_positive_items": 14,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "V",
+          "true_positive_items": 9,
+          "predicted_positive_items": 1
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "fixed_0_5",
+          "label": "H",
+          "true_positive_items": 3,
+          "predicted_positive_items": 0
+        }
+      ],
+      "test_prediction_counts_tuned": [
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "GM",
+          "true_positive_items": 17,
+          "predicted_positive_items": 26
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "PR",
+          "true_positive_items": 46,
+          "predicted_positive_items": 53
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "A",
+          "true_positive_items": 2,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "EJ",
+          "true_positive_items": 23,
+          "predicted_positive_items": 34
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "N",
+          "true_positive_items": 18,
+          "predicted_positive_items": 15
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "UC",
+          "true_positive_items": 14,
+          "predicted_positive_items": 14
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "V",
+          "true_positive_items": 9,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "majority",
+          "threshold_type": "validation_tuned",
+          "label": "H",
+          "true_positive_items": 3,
+          "predicted_positive_items": 7
+        }
+      ],
+      "fixed_classification_report": "              precision    recall  f1-score   support\n\n          GM       0.76      0.76      0.76        17\n          PR       0.93      0.80      0.86        46\n           A       0.00      0.00      0.00         2\n          EJ       0.82      0.39      0.53        23\n           N       0.75      0.83      0.79        18\n          UC       0.55      0.43      0.48        14\n           V       0.00      0.00      0.00         9\n           H       0.00      0.00      0.00         3\n\n   micro avg       0.80      0.61      0.69       132\n   macro avg       0.48      0.40      0.43       132\nweighted avg       0.72      0.61      0.65       132\n samples avg       0.75      0.61      0.65       132\n",
+      "tuned_classification_report": "              precision    recall  f1-score   support\n\n          GM       0.58      0.88      0.70        17\n          PR       0.85      0.98      0.91        46\n           A       0.18      1.00      0.31         2\n          EJ       0.47      0.70      0.56        23\n           N       0.87      0.72      0.79        18\n          UC       0.43      0.43      0.43        14\n           V       0.36      0.44      0.40         9\n           H       0.29      0.67      0.40         3\n\n   micro avg       0.60      0.78      0.68       132\n   macro avg       0.50      0.73      0.56       132\nweighted avg       0.65      0.78      0.70       132\n samples avg       0.65      0.78      0.67       132\n"
+    },
+    "strong_presence": {
+      "description": "at least 80% of valid annotators marked the strategy present",
+      "fixed_0_5_binary_metrics": {
+        "micro_f1": 0.6666666666666666,
+        "macro_f1": 0.4023895790200138,
+        "samples_f1": 0.5457875457875457,
+        "hamming_loss": 0.07967032967032966
+      },
+      "tuned_binary_metrics": {
+        "micro_f1": 0.574468085106383,
+        "macro_f1": 0.47014803179276865,
+        "samples_f1": 0.4813186813186813,
+        "hamming_loss": 0.10989010989010989
+      },
+      "thresholds": {
+        "GM": 0.45,
+        "PR": 0.55,
+        "A": 0.15000000000000002,
+        "EJ": 0.6000000000000001,
+        "N": 0.6000000000000001,
+        "UC": 0.7000000000000001,
+        "V": 0.15000000000000002,
+        "H": 0.2
+      },
+      "test_average_precision_fixed_0_5": [
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "GM",
+          "average_precision": 0.8956362039365993
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "PR",
+          "average_precision": 0.9319018608357711
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "A",
+          "average_precision": 0.25
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "EJ",
+          "average_precision": 0.5671947053069551
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "N",
+          "average_precision": 0.8867307692307692
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "UC",
+          "average_precision": 0.5310805860805861
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "V",
+          "average_precision": 0.09545454545454546
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "H",
+          "average_precision": 0.2
+        }
+      ],
+      "test_average_precision_tuned": [
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "GM",
+          "average_precision": 0.8956362039365993
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "PR",
+          "average_precision": 0.9319018608357711
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "A",
+          "average_precision": 0.25
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "EJ",
+          "average_precision": 0.5671947053069551
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "N",
+          "average_precision": 0.8867307692307692
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "UC",
+          "average_precision": 0.5310805860805861
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "V",
+          "average_precision": 0.09545454545454546
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "H",
+          "average_precision": 0.2
+        }
+      ],
+      "test_prediction_counts_fixed_0_5": [
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "GM",
+          "true_positive_items": 11,
+          "predicted_positive_items": 17
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "PR",
+          "true_positive_items": 29,
+          "predicted_positive_items": 40
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "A",
+          "true_positive_items": 1,
+          "predicted_positive_items": 0
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "EJ",
+          "true_positive_items": 13,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "N",
+          "true_positive_items": 10,
+          "predicted_positive_items": 20
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "UC",
+          "true_positive_items": 7,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "V",
+          "true_positive_items": 2,
+          "predicted_positive_items": 1
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "fixed_0_5",
+          "label": "H",
+          "true_positive_items": 1,
+          "predicted_positive_items": 0
+        }
+      ],
+      "test_prediction_counts_tuned": [
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "GM",
+          "true_positive_items": 11,
+          "predicted_positive_items": 17
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "PR",
+          "true_positive_items": 29,
+          "predicted_positive_items": 36
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "A",
+          "true_positive_items": 1,
+          "predicted_positive_items": 11
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "EJ",
+          "true_positive_items": 13,
+          "predicted_positive_items": 6
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "N",
+          "true_positive_items": 10,
+          "predicted_positive_items": 15
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "UC",
+          "true_positive_items": 7,
+          "predicted_positive_items": 4
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "V",
+          "true_positive_items": 2,
+          "predicted_positive_items": 18
+        },
+        {
+          "scheme": "strong_presence",
+          "threshold_type": "validation_tuned",
+          "label": "H",
+          "true_positive_items": 1,
+          "predicted_positive_items": 7
+        }
+      ],
+      "fixed_classification_report": "              precision    recall  f1-score   support\n\n          GM       0.59      0.91      0.71        11\n          PR       0.68      0.93      0.78        29\n           A       0.00      0.00      0.00         1\n          EJ       0.55      0.46      0.50        13\n           N       0.50      1.00      0.67        10\n          UC       0.45      0.71      0.56         7\n           V       0.00      0.00      0.00         2\n           H       0.00      0.00      0.00         1\n\n   micro avg       0.58      0.78      0.67        74\n   macro avg       0.35      0.50      0.40        74\nweighted avg       0.56      0.78      0.64        74\n samples avg       0.55      0.57      0.55        74\n",
+      "tuned_classification_report": "              precision    recall  f1-score   support\n\n          GM       0.59      0.91      0.71        11\n          PR       0.67      0.83      0.74        29\n           A       0.09      1.00      0.17         1\n          EJ       0.83      0.38      0.53        13\n           N       0.60      0.90      0.72        10\n          UC       0.75      0.43      0.55         7\n           V       0.06      0.50      0.10         2\n           H       0.14      1.00      0.25         1\n\n   micro avg       0.47      0.73      0.57        74\n   macro avg       0.47      0.74      0.47        74\nweighted avg       0.65      0.73      0.65        74\n samples avg       0.47      0.53      0.48        74\n"
+    }
+  },
+  "fixed_0_5_binary_metrics": {
+    "micro_f1": 0.6896551724137931,
+    "macro_f1": 0.4280070559435525,
+    "samples_f1": 0.6479853479853479,
+    "hamming_loss": 0.0989010989010989
+  },
+  "tuned_binary_metrics": {
+    "micro_f1": 0.6798679867986799,
+    "macro_f1": 0.5615389200762518,
+    "samples_f1": 0.6732600732600732,
+    "hamming_loss": 0.13324175824175824
+  },
+  "thresholds": {
+    "GM": 0.2,
+    "PR": 0.3,
+    "A": 0.15000000000000002,
+    "EJ": 0.2,
+    "N": 0.6000000000000001,
+    "UC": 0.45,
+    "V": 0.2,
+    "H": 0.2
+  },
+  "test_soft_metrics": [
+    {
+      "label": "GM",
+      "strategy": "growth mindset",
+      "mae": 0.11890719830989838,
+      "rmse": 0.18448444165234812,
+      "pearson": 0.8253906965255737,
+      "spearman": 0.7034233305976482,
+      "mean_true": 0.22673992812633514,
+      "mean_pred": 0.22110871970653534
+    },
+    {
+      "label": "PR",
+      "strategy": "positive repurposing",
+      "mae": 0.15213893353939056,
+      "rmse": 0.19620992479133242,
+      "pearson": 0.8205064535140991,
+      "spearman": 0.8175012860159157,
+      "mean_true": 0.4930402636528015,
+      "mean_pred": 0.46658623218536377
+    },
+    {
+      "label": "A",
+      "strategy": "aberration",
+      "mae": 0.08602061867713928,
+      "rmse": 0.12965839042055302,
+      "pearson": 0.48630771040916443,
+      "spearman": 0.25153448994192423,
+      "mean_true": 0.06739926338195801,
+      "mean_pred": 0.06476545333862305
+    },
+    {
+      "label": "EJ",
+      "strategy": "external justification",
+      "mae": 0.18418695032596588,
+      "rmse": 0.2476617947869274,
+      "pearson": 0.6561989188194275,
+      "spearman": 0.5897849388885705,
+      "mean_true": 0.28424909710884094,
+      "mean_pred": 0.226652130484581
+    },
+    {
+      "label": "N",
+      "strategy": "normalizing",
+      "mae": 0.14166392385959625,
+      "rmse": 0.19112330562945742,
+      "pearson": 0.782828688621521,
+      "spearman": 0.6316942425920554,
+      "mean_true": 0.22087915241718292,
+      "mean_pred": 0.2618626356124878
+    },
+    {
+      "label": "UC",
+      "strategy": "unwarranted conclusions",
+      "mae": 0.15948675572872162,
+      "rmse": 0.21074690862110168,
+      "pearson": 0.585707426071167,
+      "spearman": 0.48770708177856215,
+      "mean_true": 0.2567765712738037,
+      "mean_pred": 0.2633025646209717
+    },
+    {
+      "label": "V",
+      "strategy": "validation",
+      "mae": 0.13285166025161743,
+      "rmse": 0.18914288750689362,
+      "pearson": 0.46367624402046204,
+      "spearman": 0.4794680416013259,
+      "mean_true": 0.15091575682163239,
+      "mean_pred": 0.10265414416790009
+    },
+    {
+      "label": "H",
+      "strategy": "humor",
+      "mae": 0.06104988977313042,
+      "rmse": 0.12255949802748989,
+      "pearson": 0.5791212320327759,
+      "spearman": 0.47706941896152366,
+      "mean_true": 0.05860805884003639,
+      "mean_pred": 0.043270573019981384
+    }
+  ]
+}
