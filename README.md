@@ -105,6 +105,34 @@ The main entry points are:
 - [Multitask prototype](Code/multitask/high_roi_multitask_heads_evaluation.ipynb)
 - [Annotation reliability analysis](Data_exploration/IRR-reapp-annotations.ipynb)
 
+### What the hyperparameter experiment tested
+
+The tuning study asked two related questions:
+
+1. **Learning rate:** how large should each optimization step be for each encoder?
+2. **Scheduler:** after warmup, should the learning rate decay linearly, follow a cosine curve, or remain constant?
+
+The comparison was controlled: within a model, the data construction, soft-label objective, optimizer, maximum sequence length, evaluation code, and early-stopping rule stayed fixed. Runs used AdamW with weight decay `0.01`, 10% warmup, at most 30 epochs, early-stopping patience 6, and gradient clipping at `1.0`. The best checkpoint was selected by validation loss; test metrics were reported only after checkpoint selection.
+
+The table below describes the configurations that were actually executed and saved. It is intentionally narrower than the larger search space supported by the notebook.
+
+| Model | Learning rates executed | Schedulers executed | Recorded seeds |
+|---|---|---|---|
+| BERT Base | `5e-6`, `1e-5`, `2e-5`, `3e-5` | Linear | 42 |
+| BERT Large | `2e-6`, `5e-6`, `1e-5` | Linear | 42; seeds 13 and 42 for `5e-6` and `1e-5` |
+| BERT Large at `1e-5` | `1e-5` | Linear, cosine, constant with warmup | Linear and cosine: 13, 42; constant: 42 |
+| ModernBERT Base | `1e-5` | Linear | 42 |
+| RoBERTa Large | `1e-5` | Linear | 13, 42 |
+
+The main findings were:
+
+- **Learning rate mattered.** For BERT Base, `3e-5` produced the best soft-label MAE and correlation, while `2e-5` produced the highest majority macro F1. For BERT Large, `1e-5` and `5e-6` were close across the two recorded seeds, while `2e-6` was weaker in its single recorded run.
+- **No scheduler dominated every metric.** At BERT Large `1e-5`, linear decay had slightly better replicated MAE, cosine had slightly better replicated validation loss and majority F1, and constant-with-warmup had a promising seed-42 F1 but was not replicated.
+- **RoBERTa Large produced the strongest individual run.** Seed 42 at `1e-5` with a linear scheduler reached macro MAE `0.128`, mean Pearson `0.700`, and majority macro F1 `0.570`. Across seeds 13 and 42, the same tuned configuration averaged MAE `0.135 ± 0.009`, Pearson `0.627 ± 0.103`, and majority F1 `0.518 ± 0.074`.
+- **Seed variation was substantial.** The gap between the two RoBERTa seeds shows why the best single run should not be interpreted as a stable final estimate. The seed currently controls both the random data split and model initialization.
+
+This was a staged, resource-conscious tuning experiment rather than a fully crossed grid in which every learning rate and scheduler was repeated for every model and seed.
+
 ## Experiment tracking and visualisation
 
 The neural experiments produce reproducible local artifacts rather than relying only on notebook output:
@@ -121,27 +149,27 @@ Use [BERT Visualisations](Code/BERT_models/notebooks/analysis/BERT_Visualisation
 
 ## Results at a glance
 
-The table below uses the best recorded configuration for each model architecture in the committed summaries. Macro MAE and mean Pearson evaluate the predicted soft labels. Lower MAE and higher Pearson are better. Binary macro F1 is shown with its target definition because the TF-IDF and transformer experiments do not use exactly the same binary cutoff.
+The table below uses the recorded result artifacts for each model architecture. Macro MAE and mean Pearson evaluate the predicted soft labels. Lower MAE and higher Pearson are better. Binary macro F1 is shown with its target definition because the TF-IDF and transformer experiments do not use exactly the same binary cutoff.
 
 ### Current leaders
 
 <table>
   <tr>
     <td align="center" width="33%">
-      <strong>Best recorded overall</strong><br><br>
+      <strong>Best individual run</strong><br><br>
       <strong>RoBERTa Large</strong><br>
       <code>MAE 0.128 ↓</code><br>
       <code>Pearson 0.700 ↑</code><br>
       <code>Majority F1 0.570 ↑</code><br><br>
-      <sub>Best on all three headline metrics · 1 seed</sub>
+      <sub>Seed 42 · LR 1e-5 · linear scheduler</sub>
     </td>
     <td align="center" width="33%">
       <strong>Best replicated soft-label result</strong><br><br>
-      <strong>BERT Large</strong><br>
-      <code>MAE 0.142 ± 0.006 ↓</code><br>
-      <code>Pearson 0.566 ± 0.035 ↑</code><br>
-      <code>Majority F1 0.436 ± 0.038 ↑</code><br><br>
-      <sub>Strongest MAE among configurations run with 2 seeds</sub>
+      <strong>RoBERTa Large</strong><br>
+      <code>MAE 0.130 ± 0.004 ↓</code><br>
+      <code>Pearson 0.631 ± 0.040 ↑</code><br>
+      <code>Majority F1 0.498 ± 0.064 ↑</code><br><br>
+      <sub>Controlled first-token setup · seeds 13 and 42</sub>
     </td>
     <td align="center" width="33%">
       <strong>Best lightweight approach</strong><br><br>
@@ -154,7 +182,7 @@ The table below uses the best recorded configuration for each model architecture
   </tr>
 </table>
 
-These labels summarize the evidence currently committed to the repository, not a final model ranking. In particular, the overall leader is a single-seed result, and TF-IDF's binary F1 is not directly comparable with transformer majority F1.
+These labels summarize the evidence currently committed to the repository, not a final model ranking. The best individual run should be read alongside the two-seed averages, and TF-IDF's binary F1 is not directly comparable with transformer majority F1.
 
 | Approach | Selected configuration | Seeds | Macro MAE ↓ | Mean Pearson ↑ | Binary macro F1 ↑ | Binary target |
 |---|---|---:|---:|---:|---:|---|
@@ -163,21 +191,22 @@ These labels summarize the evidence currently committed to the repository, not a
 | ModernBERT Base | Original runner, LR `1e-5` | 13, 42 | 0.163 ± 0.001 | 0.443 ± 0.001 | 0.401 ± 0.032 | Majority |
 | BERT Base | Linear schedule, LR `3e-5` | 42 | 0.145 | 0.593 | 0.443 | Majority |
 | BERT Large | Linear schedule, LR `1e-5` | 13, 42 | 0.142 ± 0.006 | 0.566 ± 0.035 | 0.436 ± 0.038 | Majority |
-| RoBERTa Large | Linear schedule, LR `1e-5` | 42 | **0.128** | **0.700** | **0.570** | Majority |
-| RoBERTa Large + TAPT | Linear schedule, LR `1e-5` | 13 | 0.134 | 0.589 | 0.454 | Majority |
+| RoBERTa Large | Tuned series, linear schedule, LR `1e-5` | 13, 42 | 0.135 ± 0.009 | 0.627 ± 0.103 | **0.518 ± 0.074** | Majority |
+| RoBERTa Large | Controlled first-token series, linear schedule, LR `1e-5` | 13, 42 | **0.130 ± 0.004** | **0.631 ± 0.040** | 0.498 ± 0.064 | Majority |
+| RoBERTa Large + TAPT | Controlled first-token series, linear schedule, LR `1e-5` | 13, 42 | 0.132 ± 0.003 | 0.620 ± 0.043 | 0.508 ± 0.076 | Majority |
 
-The tuned RoBERTa Large run has the strongest recorded result on all three headline metrics. It is a single-seed result, so it should be confirmed with additional seeds. Among configurations evaluated with two seeds, BERT Large has the lowest soft-label error, while its majority macro F1 is close to the selected BERT Base result. TF-IDF is a useful lightweight baseline, but its binary F1 is not directly interchangeable with the majority F1 because it uses a stricter target definition.
+The tuned RoBERTa Large seed-42 run has the strongest individual result on all three headline metrics, but its two-seed standard deviations show meaningful seed sensitivity. In the controlled first-token comparison, standard RoBERTa has the best replicated soft-label metrics, while TAPT has slightly higher majority macro F1. TF-IDF remains a useful lightweight baseline, but its binary F1 is not directly interchangeable with majority F1 because it uses a stricter target definition.
 
-The source tables are the [TF-IDF model summary](Code/TF_IDF/outputs/tfidf_model_summary.csv), [ranked transformer configuration summary](Code/BERT_models/experiments/lr_epoch_tuning/important_key_results_by_config.csv), and [TAPT downstream comparison](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed13_by_lr.csv). Values above are rounded to three decimals; `±` values are standard deviations across the two listed seeds.
+The source artifacts are the [TF-IDF model summary](Code/TF_IDF/outputs/tfidf_model_summary.csv), [per-run transformer results](Code/BERT_models/experiments/lr_epoch_tuning/important_key_results_table.csv), the RoBERTa tuning metrics for [seed 13](Code/BERT_models/experiments/lr_epoch_tuning/roberta_large_lr_1e_05_random_seed13_metrics.json) and [seed 42](Code/BERT_models/experiments/lr_epoch_tuning/roberta_large_lr_1e_05_random_seed42_metrics.json), and the TAPT comparisons for [seed 13](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed13_by_lr.csv) and [seed 42](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed42_by_lr.csv). Values above are rounded to three decimals; `±` values are sample standard deviations across the two listed seeds.
 
 ### Does TAPT improve RoBERTa?
 
-The controlled seed-13 comparison gives a mixed result:
+The controlled comparison across seeds 13 and 42 gives a mixed result. Values are means with sample standard deviations:
 
 | Variant | Macro MAE ↓ | Mean Pearson ↑ | Weak-presence macro F1 ↑ | Majority macro F1 ↑ | Strong-presence macro F1 ↑ |
 |---|---:|---:|---:|---:|---:|
-| Standard RoBERTa Large | **0.133** | **0.603** | **0.712** | 0.453 | **0.380** |
-| RoBERTa Large + TAPT | 0.134 | 0.589 | 0.696 | **0.454** | 0.328 |
+| Standard RoBERTa Large | **0.130 ± 0.004** | **0.631 ± 0.040** | **0.703 ± 0.013** | 0.498 ± 0.064 | **0.416 ± 0.052** |
+| RoBERTa Large + TAPT | 0.132 ± 0.003 | 0.620 ± 0.043 | 0.702 ± 0.009 | **0.508 ± 0.076** | 0.399 ± 0.101 |
 
-TAPT lowers validation loss and raises majority macro F1 by about 0.002, but it slightly worsens soft-label MAE and Pearson correlation and reduces the weak- and strong-presence F1 scores. On this one-seed comparison, TAPT does not provide a consistent overall improvement. The detailed metrics are in the [TAPT comparison table](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed13_by_lr.csv).
+On average, TAPT raises majority macro F1 by about `0.010`, but it worsens macro MAE by about `0.001` and mean Pearson by about `0.011`; the weak- and strong-presence averages are also slightly lower. TAPT therefore does not provide a consistent overall improvement across the two recorded seeds. The detailed seed-level metrics are in the [seed-13](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed13_by_lr.csv) and [seed-42](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed42_by_lr.csv) comparison tables.
 
