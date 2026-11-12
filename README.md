@@ -94,27 +94,3 @@ Values above are rounded to three decimals; `±` values are standard deviations 
 
 
 
-### Approaches without a completed aggregate comparison
-
-- **LLM prompting:** the repository contains 61 cached responses from DeepSeek V4 Pro and GLM 5.2 across zero-shot and few-shot conditions. The committed artifacts do not contain a completed ground-truth join or aggregate evaluation table, so no comparable performance conclusion is available yet. See the [cached LLM scores](Code/LLM/outputs/multi_model_prompting_raw_scores.csv).
-- **Multitask model:** the notebook is an experimental scaffold. Training is disabled and no completed result artifacts were recovered, so its performance is not yet known.
-- **Annotation reliability:** the IRR notebook evaluates annotation agreement rather than predictive performance and therefore does not belong in the model leaderboard.
-
-## Data required for rerunning experiments
-
-The public repository does **not** include the raw research data. The training notebooks expect the following approved files in `data/`:
-
-```text
-data/
-  annotate-lime.csv
-  annotations-only-[GM].csv
-  annotations-only-[PR].csv
-  annotations-only-[A].csv
-  annotations-only-[EJ].csv
-  annotations-only-[N].csv
-  annotations-only-[UC].csv
-  annotations-only-[V].csv
-  annotations-only-[H].csv
-```
-
-`annotate-lime.csv` supplies the text examples. Each semicolon-separated annotation matrix supplies the individual judgments used to construct vote counts and soft targets for one strategy. See [data/README.md](data/README.md) before adding or sharing any data.
