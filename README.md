@@ -173,19 +173,7 @@ The final model comparison used RoBERTa Large with first-token pooling, learning
 
 Augmentation raised majority macro F1 in two of the three paired runs and improved the three-seed mean by `0.052`. The targeted A and H averages also improved, while overall soft-label MAE was essentially unchanged and Pearson correlation increased only slightly. These rare-label results remain uncertain: the fixed test set contains only two majority-A and three majority-H examples, so a single prediction can move F1 substantially. The evidence supports a promising controlled result on this split, not a general claim that paraphrasing will always improve rare-label performance. See the seed-level comparisons for [seed 7](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed7.csv), [seed 13](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed13.csv), and [seed 42](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed42.csv).
 
-## Experiment tracking and visualisation
 
-The neural experiments produce reproducible local artifacts rather than relying only on notebook output:
-
-- each run records its model configuration, learning rate, scheduler, random seed, best epoch, and evaluation metrics;
-- per-epoch training and validation losses are saved as `*_training_history.csv` files;
-- early stopping restores the checkpoint with the lowest validation loss;
-- the analysis notebooks turn the saved histories into learning curves and cross-run comparison tables; and
-- metrics and compact result artifacts remain inspectable without downloading full model checkpoints.
-
-Use [BERT Visualisations](Code/BERT_models/notebooks/analysis/BERT_Visualisations.ipynb) for the full visual analysis and [Important Results Summary](Code/BERT_models/notebooks/analysis/Important_Results_Summary.ipynb) for the condensed comparison. The TAPT workflow additionally exports an MLM loss curve for each run.
-
-> **Possible next improvement — Weights & Biases:** W&B is not currently connected to these notebooks. A useful extension would be to mirror the existing configuration, loss, and metric logs to W&B for live run comparison and optional completion/failure notifications. The committed CSV and JSON files should remain the reproducible source of truth.
 
 ## Results at a glance
 
