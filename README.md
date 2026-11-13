@@ -37,6 +37,7 @@ Code/
     notebooks/analysis/               Result summaries and visualizations
     experiments/baseline/             BERT, BERT Large, and ModernBERT runs
     experiments/lr_epoch_tuning/      Learning-rate and scheduler experiments
+    experiments/augmentation/         Original vs. augmented paired runs
     experiments/tapt/
       masked_language_modeling/       RoBERTa TAPT stage
       downstream_comparison/          Standard vs. TAPT classifier results
@@ -48,6 +49,7 @@ Code/
   paraphrasing/
     Paraphrase_Augmentation_Experiment.ipynb
     Final_AH_One_Per_Source_Augmentation.ipynb
+    outputs/                           Audits and controlled split files
   comparison/
     Model_comparison.ipynb            Cross-family comparison
 Data_exploration/
@@ -90,7 +92,7 @@ flowchart LR
 | 3 | Transformer baselines | Do contextual encoders improve on the classical baseline? | BERT Base, BERT Large, and ModernBERT runs across seeds 13 and 42 | Completed |
 | 4 | Hyperparameter tuning | How sensitive are the transformers to learning rate, scheduler, and training duration? | Controlled sweeps with early stopping and stored per-epoch histories | Completed |
 | 5 | RoBERTa + TAPT | Does additional masked-language-model training on in-domain text improve downstream classification? | Standard and task-adapted RoBERTa compared with the same split and training setup | Completed for the recorded seeds |
-| 6 | Paraphrase augmentation | Can label-preserving paraphrases improve the rare `A` and `H` strategies? | Controlled original-versus-augmented protocol with unchanged validation and test sets | Pipeline prepared; final comparison pending |
+| 6 | Paraphrase augmentation | Can label-preserving paraphrases improve the rare `A` and `H` strategies? | Controlled original-versus-augmented RoBERTa comparison across three training seeds | Completed for seeds 7, 13, and 42 |
 | 7 | LLM prompting | Can instruction-following models classify the strategies without fine-tuning? | Cached zero-shot and few-shot responses | Partial; aggregate evaluation pending |
 | 8 | Multitask learning | Can auxiliary prediction heads improve the shared representation? | Shared-encoder prototype | Scaffold only; training pending |
 
@@ -100,7 +102,7 @@ The main entry points are:
 - [Transformer experiment runner](Code/BERT_models/notebooks/training/BERT_Soft_Label_Experiment_Runner.ipynb)
 - [Learning-rate, scheduler, and epoch tuning](Code/BERT_models/notebooks/training/BERT_Soft_Label_LR_Epoch_Tuning.ipynb)
 - [RoBERTa task-adaptive pretraining](Code/BERT_models/notebooks/training/RoBERTa_Masked_Language_Modelling_TAPT.ipynb) and [controlled downstream comparison](Code/BERT_models/notebooks/training/RoBERTa_TAPT_Comparison_Seed13.ipynb)
-- [Rare-label paraphrase augmentation](Code/paraphrasing/Final_AH_One_Per_Source_Augmentation.ipynb)
+- [Rare-label paraphrase augmentation](Code/paraphrasing/Final_AH_One_Per_Source_Augmentation.ipynb) and [paired RoBERTa comparison](Code/BERT_models/notebooks/training/run_roberta_augmentation_comparison.py)
 - [LLM prompting comparison](Code/LLM/llm_model_comparison_baseline.ipynb)
 - [Multitask prototype](Code/multitask/high_roi_multitask_heads_evaluation.ipynb)
 - [Annotation reliability analysis](Data_exploration/IRR-reapp-annotations.ipynb)
@@ -133,6 +135,44 @@ The main findings were:
 
 This was a staged, resource-conscious tuning experiment rather than a fully crossed grid in which every learning rate and scheduler was repeated for every model and seed.
 
+### Rare-label paraphrase augmentation
+
+The augmentation experiment tested whether adding carefully filtered paraphrases could improve the two rarest majority labels: **A (aberration)** and **H (humor)**. The seed-42 split was created before augmentation, and only training rows were eligible. Validation and test remained unchanged at 91 rows each.
+
+For every training source with majority A or H, the pipeline generated alternative paraphrases and applied deterministic duplicate, length, and lexical-change checks followed by structured model-based checks for meaning, all eight strategy labels, added or removed content, and fluency. Exactly one passing paraphrase was selected per source; the complete original row and its soft-label and vote-count vectors were retained.
+
+| Dataset audit | Result |
+|---|---:|
+| Original training rows | 424 |
+| Eligible A/H sources | 23 |
+| Selected synthetic rows | 23 |
+| Final augmented training rows | 447 |
+| Synthetic share of augmented training set | 5.1% |
+| Unresolved sources | 0 |
+| Candidate generations evaluated | 48 |
+| Candidates passing all quality gates | 40 |
+
+The 23 selected paraphrases had mean evaluator scores of `98.6/100` for semantic fidelity, `99.3/100` for label preservation, and `99.8/100` for fluency. These are automated quality-evaluator scores, not independent human ratings.
+
+| Majority-positive training rows | Original | Augmented | Change |
+|---|---:|---:|---:|
+| A — aberration | 8 | 16 | 2.0× |
+| H — humor | 15 | 30 | 2.0× |
+
+The final model comparison used RoBERTa Large with first-token pooling, learning rate `1e-5`, a linear scheduler, batch size 4, dropout `0.5`, binomial NLL, at most 30 epochs, and early-stopping patience 6. Original and augmented conditions used the same seed-42 data split and were paired at training seeds 7, 13, and 42.
+
+| Metric | Original training | Augmented training | Mean paired change |
+|---|---:|---:|---:|
+| Macro MAE ↓ | **0.131 ± 0.004** | 0.132 ± 0.003 | +0.001 |
+| Mean Pearson ↑ | 0.667 ± 0.007 | **0.669 ± 0.020** | +0.002 |
+| Majority macro F1 ↑ | 0.533 ± 0.043 | **0.585 ± 0.028** | +0.052 |
+| A average precision ↑ | 0.781 ± 0.192 | **0.944 ± 0.096** | +0.163 |
+| A F1 ↑ | 0.253 ± 0.055 | **0.453 ± 0.146** | +0.200 |
+| H average precision ↑ | 0.664 ± 0.248 | **0.759 ± 0.031** | +0.095 |
+| H F1 ↑ | 0.343 ± 0.302 | **0.500 ± 0.170** | +0.157 |
+
+Augmentation raised majority macro F1 in two of the three paired runs and improved the three-seed mean by `0.052`. The targeted A and H averages also improved, while overall soft-label MAE was essentially unchanged and Pearson correlation increased only slightly. These rare-label results remain uncertain: the fixed test set contains only two majority-A and three majority-H examples, so a single prediction can move F1 substantially. The evidence supports a promising controlled result on this split, not a general claim that paraphrasing will always improve rare-label performance. See the seed-level comparisons for [seed 7](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed7.csv), [seed 13](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed13.csv), and [seed 42](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed42.csv).
+
 ## Experiment tracking and visualisation
 
 The neural experiments produce reproducible local artifacts rather than relying only on notebook output:
@@ -156,7 +196,7 @@ The table below uses the recorded result artifacts for each model architecture. 
 <table>
   <tr>
     <td align="center" width="33%">
-      <strong>Best individual run</strong><br><br>
+      <strong>Strongest individual Pearson</strong><br><br>
       <strong>RoBERTa Large</strong><br>
       <code>MAE 0.128 ↓</code><br>
       <code>Pearson 0.700 ↑</code><br>
@@ -164,12 +204,12 @@ The table below uses the recorded result artifacts for each model architecture. 
       <sub>Seed 42 · LR 1e-5 · linear scheduler</sub>
     </td>
     <td align="center" width="33%">
-      <strong>Best replicated soft-label result</strong><br><br>
-      <strong>RoBERTa Large</strong><br>
-      <code>MAE 0.130 ± 0.004 ↓</code><br>
-      <code>Pearson 0.631 ± 0.040 ↑</code><br>
-      <code>Majority F1 0.498 ± 0.064 ↑</code><br><br>
-      <sub>Controlled first-token setup · seeds 13 and 42</sub>
+      <strong>Best replicated majority F1</strong><br><br>
+      <strong>RoBERTa + A/H augmentation</strong><br>
+      <code>MAE 0.132 ± 0.003 ↓</code><br>
+      <code>Pearson 0.669 ± 0.020 ↑</code><br>
+      <code>Majority F1 0.585 ± 0.028 ↑</code><br><br>
+      <sub>Fixed split · training seeds 7, 13, and 42</sub>
     </td>
     <td align="center" width="33%">
       <strong>Best lightweight approach</strong><br><br>
@@ -182,7 +222,7 @@ The table below uses the recorded result artifacts for each model architecture. 
   </tr>
 </table>
 
-These labels summarize the evidence currently committed to the repository, not a final model ranking. The best individual run should be read alongside the two-seed averages, and TF-IDF's binary F1 is not directly comparable with transformer majority F1.
+These labels summarize the currently recorded evidence, not a final model ranking. Individual runs should be read alongside the replicated averages, and TF-IDF's binary F1 is not directly comparable with transformer majority F1.
 
 | Approach | Selected configuration | Seeds | Macro MAE ↓ | Mean Pearson ↑ | Binary macro F1 ↑ | Binary target |
 |---|---|---:|---:|---:|---:|---|
@@ -191,13 +231,14 @@ These labels summarize the evidence currently committed to the repository, not a
 | ModernBERT Base | Original runner, LR `1e-5` | 13, 42 | 0.163 ± 0.001 | 0.443 ± 0.001 | 0.401 ± 0.032 | Majority |
 | BERT Base | Linear schedule, LR `3e-5` | 42 | 0.145 | 0.593 | 0.443 | Majority |
 | BERT Large | Linear schedule, LR `1e-5` | 13, 42 | 0.142 ± 0.006 | 0.566 ± 0.035 | 0.436 ± 0.038 | Majority |
-| RoBERTa Large | Tuned series, linear schedule, LR `1e-5` | 13, 42 | 0.135 ± 0.009 | 0.627 ± 0.103 | **0.518 ± 0.074** | Majority |
-| RoBERTa Large | Controlled first-token series, linear schedule, LR `1e-5` | 13, 42 | **0.130 ± 0.004** | **0.631 ± 0.040** | 0.498 ± 0.064 | Majority |
+| RoBERTa Large | Tuned series, linear schedule, LR `1e-5` | 13, 42 | 0.135 ± 0.009 | 0.627 ± 0.103 | 0.518 ± 0.074 | Majority |
+| RoBERTa Large | Controlled first-token series, linear schedule, LR `1e-5` | 13, 42 | **0.130 ± 0.004** | 0.631 ± 0.040 | 0.498 ± 0.064 | Majority |
 | RoBERTa Large + TAPT | Controlled first-token series, linear schedule, LR `1e-5` | 13, 42 | 0.132 ± 0.003 | 0.620 ± 0.043 | 0.508 ± 0.076 | Majority |
+| RoBERTa Large + A/H augmentation | Fixed seed-42 split, paired training seeds 7, 13, 42 | 7, 13, 42 | 0.132 ± 0.003 | **0.669 ± 0.020** | **0.585 ± 0.028** | Majority |
 
-The tuned RoBERTa Large seed-42 run has the strongest individual result on all three headline metrics, but its two-seed standard deviations show meaningful seed sensitivity. In the controlled first-token comparison, standard RoBERTa has the best replicated soft-label metrics, while TAPT has slightly higher majority macro F1. TF-IDF remains a useful lightweight baseline, but its binary F1 is not directly interchangeable with majority F1 because it uses a stricter target definition.
+The tuned RoBERTa Large seed-42 run has the strongest individual Pearson correlation, but its two-seed standard deviations show meaningful seed sensitivity. The augmentation experiment has the strongest replicated majority macro F1, while standard RoBERTa has the lowest replicated soft-label MAE. The augmentation estimate uses one fixed data split and three training seeds, whereas the earlier random-seed series also changes the split; their averages therefore answer different robustness questions and should not be treated as a perfectly matched ranking. TF-IDF remains a useful lightweight baseline, but its binary F1 is not directly interchangeable with majority F1 because it uses a stricter target definition.
 
-The source artifacts are the [TF-IDF model summary](Code/TF_IDF/outputs/tfidf_model_summary.csv), [per-run transformer results](Code/BERT_models/experiments/lr_epoch_tuning/important_key_results_table.csv), the RoBERTa tuning metrics for [seed 13](Code/BERT_models/experiments/lr_epoch_tuning/roberta_large_lr_1e_05_random_seed13_metrics.json) and [seed 42](Code/BERT_models/experiments/lr_epoch_tuning/roberta_large_lr_1e_05_random_seed42_metrics.json), and the TAPT comparisons for [seed 13](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed13_by_lr.csv) and [seed 42](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed42_by_lr.csv). Values above are rounded to three decimals; `±` values are sample standard deviations across the two listed seeds.
+The source artifacts are the [TF-IDF model summary](Code/TF_IDF/outputs/tfidf_model_summary.csv), [per-run transformer results](Code/BERT_models/experiments/lr_epoch_tuning/important_key_results_table.csv), the RoBERTa tuning metrics for [seed 13](Code/BERT_models/experiments/lr_epoch_tuning/roberta_large_lr_1e_05_random_seed13_metrics.json) and [seed 42](Code/BERT_models/experiments/lr_epoch_tuning/roberta_large_lr_1e_05_random_seed42_metrics.json), the TAPT comparisons for [seed 13](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed13_by_lr.csv) and [seed 42](Code/BERT_models/experiments/tapt/downstream_comparison/roberta_large_tapt_comparison_seed42_by_lr.csv), and the augmentation comparisons for [seed 7](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed7.csv), [seed 13](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed13.csv), and [seed 42](Code/BERT_models/experiments/augmentation/final_ah_one_per_source/roberta_large_augmentation_comparison_seed42.csv). Values above are rounded to three decimals; `±` values are sample standard deviations across the listed seeds.
 
 ### Does TAPT improve RoBERTa?
 
